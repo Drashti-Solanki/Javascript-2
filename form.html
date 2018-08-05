@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JS-2 form</title>
+<style>
+.container{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 50px;
+         }
+        
+input[type=text], input[type=password], input[type=email] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+     </style>   
+    </head>
+    <body>
+        <div class= "container">
+            <form onsubmit= " results();" method = "post" action="#">
+            <h3>Username</h3>
+            <input id ="username" type="text" name = "username" required>
+            <h3>Password</h3>
+            <input id ="password" type="password" name = "password" required>
+            <h3>FirstName</h3>
+            <input id ="firstname" type="text" name = "firstname" required>
+            <h3>LastName</h3>
+            <input id ="lastname" type="text" name = "lastname" required>
+            <h3>Email</h3>
+            <input id ="email" type="email" name = "email" required>
+            <h3>Gender</h3>
+            <input id ="male" type="radio" name = "gender" value ="Male" required/> Male </br>
+             <input id ="female" type="radio" name = "gender" value ="Female"/> Female </br>
+              <input id ="other" type="radio" name = "gender" value ="Other"/> Other </br>
+            <h3>Location</h3>
+            <input id= "location" type ="text" name = "location" required>
+            <br/>
+            <br/>
+            <input id ="submit" type = "submit" value ="Send data">
+             </form>
+        </div>
+        
+        
+        <script>
+            function results(){
+                var username= document.getElementById("username").value;
+                 var firstname= document.getElementById("firstname").value;
+                  var lastname= document.getElementById("lastname").value;
+                   var email= document.getElementById("email").value;
+                   if(document.getElementById("male").checked){
+                      var gender =document.getElementById('male').value;
+                   } else if (document.getElementById("female").checked){
+                       var gender =document.getElementById("female").value;
+                        } else {
+                            var gender =document.getElementById("other").value;
+                        } 
+                   var location = document.getElementById("location").value;
+                   document.write("<h3>Here is your data : </h3> </br>");
+                   document.write("<table border="+" 2 " + "><tr><th>Username</th> <th>FirstName</th> <th>LastName</th> <th>Email</th> <th>Gender</th> <th>Location</th></tr> <tr> <td>"+ username + "</td> <td>"+ firstname + "</td> <td>"+ lastname + "</td><td>"+ email + "</td><td>"+ gender + "</td> <td>" + location+ "</td>  </tr></tabel>");
+                   }
+        </script>
+        
+    </body>
+</html>
